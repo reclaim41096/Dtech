@@ -1,0 +1,4 @@
+project_id = "fduicakjkwrwkquyggpx"
+
+[functions.notify-enquiry]
+verify_jwt = true
