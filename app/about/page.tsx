@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
 
 export const metadata: Metadata = {
@@ -37,14 +38,16 @@ export default function AboutPage() {
     <>
       <section className="bg-gradient-to-b from-light-blue to-white py-16 pb-14 text-center">
         <div className="container-x">
-          <p className="mb-3.5 text-[13px] text-grey-light">
+          <p className="rise-in rise-in-1 mb-3.5 text-[13px] text-grey-light">
             <Link href="/" className="font-semibold text-blue">Home</Link> / About Us
           </p>
-          <SectionTag>About DTECH</SectionTag>
-          <h1 className="mb-4 text-[32px] font-bold text-deep-blue sm:text-[46px]">
+          <div className="rise-in rise-in-1">
+            <SectionTag>About DTECH</SectionTag>
+          </div>
+          <h1 className="rise-in rise-in-2 mb-4 text-[32px] font-bold text-deep-blue sm:text-[46px]">
             Committed to building a strong, sustainable digital presence.
           </h1>
-          <p className="mx-auto max-w-[600px] text-[17px] text-grey">
+          <p className="rise-in rise-in-3 mx-auto max-w-[600px] text-[17px] text-grey">
             We&apos;re a digital services agency that believes every business, regardless of size, deserves a digital identity that actually works for them.
           </p>
         </div>
@@ -53,7 +56,7 @@ export default function AboutPage() {
       {/* WHO WE ARE */}
       <section className="py-22">
         <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
-          <div>
+          <Reveal>
             <SectionTag>Who We Are</SectionTag>
             <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
               A digital services agency dedicated to your growth.
@@ -64,8 +67,8 @@ export default function AboutPage() {
             <p className="text-[16px] text-grey">
               Our approach goes beyond simply creating digital content. We help businesses build a professional digital presence that communicates credibility, attracts attention and creates opportunities for growth.
             </p>
-          </div>
-          <div className="rounded-[20px] bg-deep-blue p-11 text-white">
+          </Reveal>
+          <Reveal delay={120} className="rounded-[20px] bg-deep-blue p-11 text-white">
             <h4 className="mb-4.5 text-xl font-bold text-white">Who We Work With</h4>
             {audiences.map((a, i) => (
               <div key={a} className={`flex justify-between py-3.5 ${i !== 0 ? "border-t border-white/14" : ""}`}>
@@ -73,7 +76,7 @@ export default function AboutPage() {
                 <span className="font-bold text-white">✓</span>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -98,18 +101,18 @@ export default function AboutPage() {
       {/* MISSION / VISION */}
       <section className="py-22">
         <div className="container-x grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <div className="rounded-[14px] bg-deep-blue p-9">
+          <Reveal className="rounded-[14px] bg-deep-blue p-9">
             <h3 className="mb-3 text-xl font-bold text-white">Our Mission</h3>
             <p className="text-[15px] text-white/75">
               To help businesses manage their online presence and turn audiences into potential clients, through professional digital solutions that communicate credibility and attract genuine opportunity.
             </p>
-          </div>
-          <div className="rounded-[14px] bg-light-blue p-9">
+          </Reveal>
+          <Reveal delay={100} className="rounded-[14px] bg-light-blue p-9">
             <h3 className="mb-3 text-xl font-bold text-deep-blue">Our Vision</h3>
             <p className="text-[15px] text-grey">
               To be the digital partner businesses trust to turn visibility into measurable growth, known for professionalism, creativity and results.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -118,11 +121,11 @@ export default function AboutPage() {
         <div className="container-x">
           <SectionHead center tag="Our Values" title="What Guides Our Work" />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {values.map((v) => (
-              <div key={v.title} className="rounded-[14px] border border-border bg-white p-7">
+            {values.map((v, i) => (
+              <Reveal key={v.title} delay={(i % 3) * 90} className="rounded-[14px] border border-border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_14px_rgba(10,31,87,0.06)]">
                 <h3 className="mb-2 text-[17px] font-bold text-deep-blue">{v.title}</h3>
                 <p className="text-sm text-grey">{v.desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -131,15 +134,15 @@ export default function AboutPage() {
       {/* APPROACH */}
       <section className="py-22">
         <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
-          <div className="order-2 rounded-[20px] bg-deep-blue p-11 text-white lg:order-1">
+          <Reveal className="order-2 rounded-[20px] bg-deep-blue p-11 text-white lg:order-1">
             <h4 className="mb-4.5 text-xl font-bold text-white">Our Approach to Digital Growth</h4>
             {approachSteps.map((s, i) => (
               <div key={s} className={`py-3.5 ${i !== 0 ? "border-t border-white/14" : ""}`}>
                 <span className="text-sm text-white/80">{String(i + 1).padStart(2, "0")}. {s}</span>
               </div>
             ))}
-          </div>
-          <div className="order-1 lg:order-2">
+          </Reveal>
+          <Reveal delay={120} className="order-1 lg:order-2">
             <SectionTag>Our Approach</SectionTag>
             <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
               Strategy before design, growth before vanity metrics.
@@ -150,14 +153,14 @@ export default function AboutPage() {
             <p className="text-[16px] text-grey">
               That means understanding your business first, then building digital assets structured for future growth — so your platform can expand with you, without needing to be rebuilt.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-22">
         <div className="container-x">
-          <div className="rounded-[24px] bg-gradient-to-br from-deep-blue to-blue px-7 py-16 text-center text-white sm:px-16">
+          <Reveal className="rounded-[24px] bg-gradient-to-br from-deep-blue to-blue px-7 py-16 text-center text-white sm:px-16">
             <h2 className="mb-3.5 text-[26px] font-bold text-white sm:text-[36px]">
               Let&apos;s build your digital presence, the right way.
             </h2>
@@ -168,7 +171,7 @@ export default function AboutPage() {
               <Button href="/services#contact" variant="light">Get Started</Button>
               <Button href="/services" variant="ghost-light">View Our Services</Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

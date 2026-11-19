@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Reveal } from "./Reveal";
 
 export function SectionTag({ children }: { children: ReactNode }) {
   return (
@@ -20,10 +21,10 @@ export function SectionHead({
   center?: boolean;
 }) {
   return (
-    <div className={`mb-12 max-w-[640px] ${center ? "mx-auto text-center" : ""}`}>
+    <Reveal className={`mb-12 max-w-[640px] ${center ? "mx-auto text-center" : ""}`}>
       <SectionTag>{tag}</SectionTag>
       <h2 className="mb-3.5 text-[28px] font-bold tracking-tight text-deep-blue sm:text-[34px] lg:text-[40px]">{title}</h2>
       {description && <p className="text-[17px] text-grey">{description}</p>}
-    </div>
+    </Reveal>
   );
 }

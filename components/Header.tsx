@@ -3,12 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navLinks } from "@/lib/site-config";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-md backdrop-saturate-150">
@@ -18,7 +25,7 @@ export function Header() {
         </Link>
 
         <nav
-          className={`fixed inset-x-0 top-[84px] bottom-0 flex flex-col justify-start gap-6 overflow-y-auto bg-white px-6 py-8 transition-transform duration-[250ms] md:static md:flex md:translate-x-0 md:flex-row md:items-center md:gap-9 md:bg-transparent md:p-0 ${
+          className={`fixed inset-x-0 top-[84px] z-40 flex h-[calc(100dvh-84px)] flex-col justify-start gap-2 self-stretch overflow-y-auto bg-white px-6 py-8 transition-transform duration-[250ms] md:static md:z-auto md:flex md:h-auto md:translate-x-0 md:flex-row md:items-center md:gap-9 md:self-auto md:overflow-visible md:bg-transparent md:p-0 ${
             open ? "translate-x-0" : "translate-x-full md:translate-x-0"
           }`}
         >
@@ -30,14 +37,23 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`relative py-1.5 text-lg font-semibold text-charcoal transition-colors hover:text-blue md:text-[15px] ${
-                  isActive ? "text-blue after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[2px] after:rounded-full after:bg-blue" : ""
+                className={`relative border-b border-border py-4 text-lg font-semibold text-charcoal transition-colors hover:text-blue md:border-none md:py-1.5 md:text-[15px] ${
+                  isActive
+                    ? "text-blue md:after:absolute md:after:-bottom-0.5 md:after:left-0 md:after:right-0 md:after:h-[2px] md:after:rounded-full md:after:bg-blue"
+                    : ""
                 }`}
               >
                 {link.label}
               </Link>
             );
           })}
+          <Link
+            href="/services#contact"
+            onClick={() => setOpen(false)}
+            className="mt-2 inline-flex items-center justify-center rounded-[10px] bg-blue px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(30,79,216,0.28)] sm:hidden"
+          >
+            Get a Quote
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3.5">

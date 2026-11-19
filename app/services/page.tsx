@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
+import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { IconDesign, IconMail, IconPin, IconSocial, IconWebsite, IconWhatsApp } from "@/components/icons";
@@ -36,14 +37,16 @@ export default function ServicesPage() {
     <>
       <section className="bg-gradient-to-b from-light-blue to-white py-16 pb-14 text-center">
         <div className="container-x">
-          <p className="mb-3.5 text-[13px] text-grey-light">
+          <p className="rise-in rise-in-1 mb-3.5 text-[13px] text-grey-light">
             <Link href="/" className="font-semibold text-blue">Home</Link> / Our Services
           </p>
-          <SectionTag>What We Offer</SectionTag>
-          <h1 className="mb-4 text-[32px] font-bold text-deep-blue sm:text-[46px]">
+          <div className="rise-in rise-in-1">
+            <SectionTag>What We Offer</SectionTag>
+          </div>
+          <h1 className="rise-in rise-in-2 mb-4 text-[32px] font-bold text-deep-blue sm:text-[46px]">
             Everything your business needs to grow its digital presence.
           </h1>
-          <p className="mx-auto max-w-[600px] text-[17px] text-grey">
+          <p className="rise-in rise-in-3 mx-auto max-w-[600px] text-[17px] text-grey">
             From the website itself to how you show up on social media and how your brand looks everywhere else — we handle it as one connected strategy.
           </p>
         </div>
@@ -60,7 +63,7 @@ export default function ServicesPage() {
             className={`scroll-mt-24 py-16 ${alt ? "bg-light-blue" : ""} ${i !== services.length - 1 ? "border-b border-border" : ""}`}
           >
             <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
-              <div className={alt ? "lg:order-2" : ""}>
+              <Reveal className={alt ? "lg:order-2" : ""}>
                 <span className="mb-2.5 block text-xs font-bold uppercase tracking-wider text-blue">
                   0{i + 1} — {s.title}
                 </span>
@@ -75,10 +78,13 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <Button href="#contact" variant="primary">{s.cta}</Button>
-              </div>
-              <div className={`flex min-h-[280px] items-center justify-center rounded-[20px] bg-light-blue p-10 ${alt ? "lg:order-1" : ""}`}>
+              </Reveal>
+              <Reveal
+                delay={120}
+                className={`flex min-h-[280px] items-center justify-center rounded-[20px] bg-light-blue p-10 transition-transform duration-500 hover:scale-[1.02] ${alt ? "lg:order-1" : ""}`}
+              >
                 <Icon className="h-28 w-28 text-blue" />
-              </div>
+              </Reveal>
             </div>
           </section>
         );
@@ -95,13 +101,13 @@ export default function ServicesPage() {
           />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, i) => (
-              <div key={step.title} className="rounded-[14px] border border-border bg-white p-7">
+              <Reveal key={step.title} delay={i * 90} className="rounded-[14px] border border-border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_14px_rgba(10,31,87,0.06)]">
                 <div className="mb-4.5 flex h-10 w-10 items-center justify-center rounded-[10px] bg-deep-blue text-[15px] font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <h3 className="mb-2 text-base font-bold text-deep-blue">{step.title}</h3>
                 <p className="text-[13px] text-grey">{step.desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -110,7 +116,7 @@ export default function ServicesPage() {
       {/* WHY BUSINESSES NEED US */}
       <section className="py-22">
         <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
-          <div>
+          <Reveal>
             <SectionTag>Why It Matters</SectionTag>
             <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
               Why your business needs a digital strategy, not just a presence.
@@ -126,13 +132,13 @@ export default function ServicesPage() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="rounded-[20px] bg-deep-blue p-11 text-white">
+          </Reveal>
+          <Reveal delay={120} className="rounded-[20px] bg-deep-blue p-11 text-white">
             <h4 className="mb-4.5 text-xl font-bold text-white">What You Gain</h4>
             {["Credibility", "Visibility", "Consistency", "Business enquiries"].map((g, i) => (
               <div key={g} className={`py-3.5 text-sm text-white/80 ${i !== 0 ? "border-t border-white/14" : ""}`}>{g}</div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -146,7 +152,7 @@ export default function ServicesPage() {
             description="Tell us a bit about your business and what you need. We'll get back to you quickly."
           />
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-[20px] bg-deep-blue p-10 text-white sm:p-7">
+            <Reveal className="rounded-[20px] bg-deep-blue p-10 text-white sm:p-7">
               <h3 className="mb-2.5 text-xl font-bold text-white">Get In Touch</h3>
               <p className="mb-7.5 text-[15px] text-white/72">
                 Reach out directly, or fill in the enquiry form and we&apos;ll respond as soon as possible.
@@ -168,9 +174,11 @@ export default function ServicesPage() {
               <ContactMethod icon={<IconSocial className="h-[19px] w-[19px] text-white" />} label="Follow Us" last>
                 <span className="text-sm text-white/72">@real_dtech · @dtech_group · @DTechAgency_</span>
               </ContactMethod>
-            </div>
+            </Reveal>
 
-            <EnquiryForm />
+            <Reveal delay={120}>
+              <EnquiryForm />
+            </Reveal>
           </div>
         </div>
       </section>
