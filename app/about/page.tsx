@@ -40,7 +40,7 @@ export default function AboutPage() {
           <div className="rise-in rise-in-1">
             <SectionTag>About DTECH</SectionTag>
           </div>
-          <h1 className="rise-in rise-in-2 mb-4 text-[32px] font-bold text-deep-blue sm:text-[46px]">
+          <h1 className="text-display rise-in rise-in-2 mx-auto mb-4 max-w-[760px] font-bold text-deep-blue">
             Committed to building a strong, sustainable digital presence.
           </h1>
           <p className="rise-in rise-in-3 mx-auto max-w-[600px] text-[17px] text-grey">
@@ -54,7 +54,7 @@ export default function AboutPage() {
         <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <Reveal>
             <SectionTag>Who We Are</SectionTag>
-            <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
+            <h2 className="text-h2 mb-4.5 font-bold text-deep-blue">
               A digital services agency dedicated to your growth.
             </h2>
             <p className="mb-4 text-[16px] text-grey">
@@ -65,7 +65,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={120} className="rounded-[20px] bg-deep-blue p-11 text-white">
-            <h4 className="mb-4.5 text-xl font-bold text-white">Who We Work With</h4>
+            <h4 className="text-h4 mb-4.5 font-bold text-white">Who We Work With</h4>
             {audiences.map((a, i) => (
               <div key={a} className={`flex justify-between py-3.5 ${i !== 0 ? "border-t border-white/14" : ""}`}>
                 <span className="text-sm text-white/70">{a}</span>
@@ -98,13 +98,13 @@ export default function AboutPage() {
       <section className="py-22">
         <div className="container-x grid grid-cols-1 gap-6 sm:grid-cols-2">
           <Reveal className="rounded-[14px] bg-deep-blue p-9">
-            <h3 className="mb-3 text-xl font-bold text-white">Our Mission</h3>
+            <h3 className="text-h4 mb-3 font-bold text-white">Our Mission</h3>
             <p className="text-[15px] text-white/75">
               To help businesses manage their online presence and turn audiences into potential clients, through professional digital solutions that communicate credibility and attract genuine opportunity.
             </p>
           </Reveal>
           <Reveal delay={100} className="rounded-[14px] bg-light-blue p-9">
-            <h3 className="mb-3 text-xl font-bold text-deep-blue">Our Vision</h3>
+            <h3 className="text-h4 mb-3 font-bold text-deep-blue">Our Vision</h3>
             <p className="text-[15px] text-grey">
               To be the digital partner businesses trust to turn visibility into measurable growth, known for professionalism, creativity and results.
             </p>
@@ -119,7 +119,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={(i % 3) * 90} className="rounded-[14px] border border-border bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_14px_rgba(10,31,87,0.06)]">
-                <h3 className="mb-2 text-[17px] font-bold text-deep-blue">{v.title}</h3>
+                <h3 className="text-h3 mb-2 font-bold text-deep-blue">{v.title}</h3>
                 <p className="text-sm text-grey">{v.desc}</p>
               </Reveal>
             ))}
@@ -131,7 +131,7 @@ export default function AboutPage() {
       <section className="py-22">
         <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <Reveal className="order-2 rounded-[20px] bg-deep-blue p-11 text-white lg:order-1">
-            <h4 className="mb-4.5 text-xl font-bold text-white">Our Approach to Digital Growth</h4>
+            <h4 className="text-h4 mb-4.5 font-bold text-white">Our Approach to Digital Growth</h4>
             {approachSteps.map((s, i) => (
               <div key={s} className={`py-3.5 ${i !== 0 ? "border-t border-white/14" : ""}`}>
                 <span className="text-sm text-white/80">{String(i + 1).padStart(2, "0")}. {s}</span>
@@ -140,7 +140,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={120} className="order-1 lg:order-2">
             <SectionTag>Our Approach</SectionTag>
-            <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
+            <h2 className="text-h2 mb-4.5 font-bold text-deep-blue">
               Strategy before design, growth before vanity metrics.
             </h2>
             <p className="mb-4 text-[16px] text-grey">
@@ -157,7 +157,7 @@ export default function AboutPage() {
       <section className="py-22">
         <div className="container-x">
           <Reveal className="rounded-[24px] bg-gradient-to-br from-deep-blue to-blue px-7 py-16 text-center text-white sm:px-16">
-            <h2 className="mb-3.5 text-[26px] font-bold text-white sm:text-[36px]">
+            <h2 className="text-h2 mx-auto mb-3.5 max-w-[640px] font-bold text-white">
               Let&apos;s build your digital presence, the right way.
             </h2>
             <p className="mx-auto mb-8 max-w-[520px] text-base text-white/78">

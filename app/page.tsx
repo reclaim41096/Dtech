@@ -30,7 +30,7 @@ export default function HomePage() {
             <div className="rise-in rise-in-1">
               <SectionTag>Digital Services Agency</SectionTag>
             </div>
-            <h1 className="rise-in rise-in-2 mb-5.5 text-[34px] leading-[1.12] font-bold tracking-tight text-deep-blue sm:text-[44px] lg:text-[54px]">
+            <h1 className="text-display rise-in rise-in-2 mb-5.5 max-w-[640px] font-bold tracking-tight text-deep-blue">
               Your business deserves more than an online presence. It deserves{" "}
               <span className="text-blue">growth</span>.
             </h1>
@@ -70,7 +70,7 @@ export default function HomePage() {
         <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <Reveal>
             <SectionTag>Who We Are</SectionTag>
-            <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
+            <h2 className="text-h2 mb-4.5 font-bold text-deep-blue">
               A digital partner focused on turning visibility into real business opportunity.
             </h2>
             <p className="mb-6 text-[16px] text-grey">
@@ -79,7 +79,7 @@ export default function HomePage() {
             <Button href="/about" variant="outline">More About Us</Button>
           </Reveal>
           <Reveal delay={120} className="rounded-[20px] bg-deep-blue p-11 text-white">
-            <h4 className="mb-4.5 text-xl font-bold text-white">Our Approach</h4>
+            <h4 className="text-h4 mb-4.5 font-bold text-white">Our Approach</h4>
             {[
               { label: "Credibility", value: "Built" },
               { label: "Visibility", value: "Improved" },
@@ -112,7 +112,7 @@ export default function HomePage() {
                     <div className="mb-5.5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-light-blue transition-transform duration-300 group-hover:scale-110">
                       <Icon className="h-6.5 w-6.5 text-blue" />
                     </div>
-                    <h3 className="mb-2.5 text-[19px] font-bold text-deep-blue">{s.title}</h3>
+                    <h3 className="text-h3 mb-2.5 font-bold text-deep-blue">{s.title}</h3>
                     <p className="mb-4.5 text-[15px] text-grey">{s.short}</p>
                     <Link href={`/services#${s.slug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue">
                       Learn more
@@ -136,7 +136,7 @@ export default function HomePage() {
                 <div className="mx-auto mb-4.5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-light-blue transition-transform duration-300 hover:scale-110">
                   <span className="text-xl font-bold text-blue">✓</span>
                 </div>
-                <h3 className="mb-2 text-[15px] font-bold text-deep-blue">{item.title}</h3>
+                <h3 className="text-h3 mb-2 font-bold text-deep-blue">{item.title}</h3>
                 <p className="text-[13px] text-grey">{item.desc}</p>
               </Reveal>
             ))}
@@ -148,7 +148,7 @@ export default function HomePage() {
       <section className="py-22">
         <div className="container-x">
           <Reveal className="rounded-[24px] bg-gradient-to-br from-deep-blue to-blue px-7 py-16 text-center text-white sm:px-16">
-            <h2 className="mb-3.5 text-[26px] font-bold text-white sm:text-[36px]">
+            <h2 className="text-h2 mx-auto mb-3.5 max-w-[640px] font-bold text-white">
               Ready to turn visibility into opportunity?
             </h2>
             <p className="mx-auto mb-8 max-w-[520px] text-base text-white/78">

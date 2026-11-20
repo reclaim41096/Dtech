@@ -39,7 +39,7 @@ export default function ServicesPage() {
           <div className="rise-in rise-in-1">
             <SectionTag>What We Offer</SectionTag>
           </div>
-          <h1 className="rise-in rise-in-2 mb-4 text-[32px] font-bold text-deep-blue sm:text-[46px]">
+          <h1 className="text-display rise-in rise-in-2 mx-auto mb-4 max-w-[760px] font-bold text-deep-blue">
             Everything your business needs to grow its digital presence.
           </h1>
           <p className="rise-in rise-in-3 mx-auto max-w-[600px] text-[17px] text-grey">
@@ -63,7 +63,7 @@ export default function ServicesPage() {
                 <span className="mb-2.5 block text-xs font-bold uppercase tracking-wider text-blue">
                   0{i + 1} · {s.title}
                 </span>
-                <h2 className="mb-4 text-[28px] font-bold text-deep-blue">{s.title}</h2>
+                <h2 className="text-h2 mb-4 font-bold text-deep-blue">{s.title}</h2>
                 <p className="mb-5 text-base text-grey">{s.short}</p>
                 <ul className="mb-6 space-y-2.5">
                   {s.features.map((f) => (
@@ -101,7 +101,7 @@ export default function ServicesPage() {
                 <div className="mb-4.5 flex h-10 w-10 items-center justify-center rounded-[10px] bg-deep-blue text-[15px] font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="mb-2 text-base font-bold text-deep-blue">{step.title}</h3>
+                <h3 className="text-h3 mb-2 font-bold text-deep-blue">{step.title}</h3>
                 <p className="text-[13px] text-grey">{step.desc}</p>
               </Reveal>
             ))}
@@ -114,7 +114,7 @@ export default function ServicesPage() {
         <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <Reveal>
             <SectionTag>Why It Matters</SectionTag>
-            <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
+            <h2 className="text-h2 mb-4.5 font-bold text-deep-blue">
               Why your business needs a digital strategy, not just a presence.
             </h2>
             <p className="mb-5 text-[16px] text-grey">
@@ -130,7 +130,7 @@ export default function ServicesPage() {
             </ul>
           </Reveal>
           <Reveal delay={120} className="rounded-[20px] bg-deep-blue p-11 text-white">
-            <h4 className="mb-4.5 text-xl font-bold text-white">What You Gain</h4>
+            <h4 className="text-h4 mb-4.5 font-bold text-white">What You Gain</h4>
             {["Credibility", "Visibility", "Consistency", "Business enquiries"].map((g, i) => (
               <div key={g} className={`py-3.5 text-sm text-white/80 ${i !== 0 ? "border-t border-white/14" : ""}`}>{g}</div>
             ))}
@@ -149,7 +149,7 @@ export default function ServicesPage() {
           />
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <Reveal className="rounded-[20px] bg-deep-blue p-10 text-white sm:p-7">
-              <h3 className="mb-2.5 text-xl font-bold text-white">Get In Touch</h3>
+              <h3 className="text-h4 mb-2.5 font-bold text-white">Get In Touch</h3>
               <p className="mb-7.5 text-[15px] text-white/72">
                 Reach out directly, or fill in the enquiry form and we&apos;ll respond as soon as possible.
               </p>

@@ -23,7 +23,7 @@ export function SectionHead({
   return (
     <Reveal className={`mb-12 max-w-[640px] ${center ? "mx-auto text-center" : ""}`}>
       <SectionTag>{tag}</SectionTag>
-      <h2 className="mb-3.5 text-[28px] font-bold tracking-tight text-deep-blue sm:text-[34px] lg:text-[40px]">{title}</h2>
+      <h2 className="text-h2 mb-3.5 font-bold tracking-tight text-deep-blue">{title}</h2>
       {description && <p className="text-[17px] text-grey">{description}</p>}
     </Reveal>
   );
