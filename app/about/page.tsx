@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
@@ -38,9 +37,6 @@ export default function AboutPage() {
     <>
       <section className="bg-gradient-to-b from-light-blue to-white py-16 pb-14 text-center">
         <div className="container-x">
-          <p className="rise-in rise-in-1 mb-3.5 text-[13px] text-grey-light">
-            <Link href="/" className="font-semibold text-blue">Home</Link> / About Us
-          </p>
           <div className="rise-in rise-in-1">
             <SectionTag>About DTECH</SectionTag>
           </div>
@@ -89,7 +85,7 @@ export default function AboutPage() {
               DTECH Digital Agency was built around a simple observation: too many good businesses are invisible online, not because they lack value, but because they lack the right digital strategy.
             </p>
             <p>
-              We set out to close that gap — combining professional website development, strategic social media management and creative visual design into one dependable service, so businesses can focus on what they do best while we handle how they show up online.
+              We set out to close that gap by combining professional website development, strategic social media management and creative visual design into one dependable service, so businesses can focus on what they do best while we handle how they show up online.
             </p>
             <p>
               Today, that same principle guides every project we take on: a digital presence should do more than exist. It should work for the business behind it.
@@ -151,7 +147,7 @@ export default function AboutPage() {
               We don&apos;t believe in building digital presence for its own sake. Every website, social media strategy and visual design we create is built to move a business from being seen to being chosen.
             </p>
             <p className="text-[16px] text-grey">
-              That means understanding your business first, then building digital assets structured for future growth — so your platform can expand with you, without needing to be rebuilt.
+              That means understanding your business first, then building digital assets structured for future growth, so your platform can expand with you without needing to be rebuilt.
             </p>
           </Reveal>
         </div>

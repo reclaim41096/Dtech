@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
@@ -37,9 +36,6 @@ export default function ServicesPage() {
     <>
       <section className="bg-gradient-to-b from-light-blue to-white py-16 pb-14 text-center">
         <div className="container-x">
-          <p className="rise-in rise-in-1 mb-3.5 text-[13px] text-grey-light">
-            <Link href="/" className="font-semibold text-blue">Home</Link> / Our Services
-          </p>
           <div className="rise-in rise-in-1">
             <SectionTag>What We Offer</SectionTag>
           </div>
@@ -47,7 +43,7 @@ export default function ServicesPage() {
             Everything your business needs to grow its digital presence.
           </h1>
           <p className="rise-in rise-in-3 mx-auto max-w-[600px] text-[17px] text-grey">
-            From the website itself to how you show up on social media and how your brand looks everywhere else — we handle it as one connected strategy.
+            From the website itself to how you show up on social media and how your brand looks everywhere else, we handle it as one connected strategy.
           </p>
         </div>
       </section>
@@ -65,7 +61,7 @@ export default function ServicesPage() {
             <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
               <Reveal className={alt ? "lg:order-2" : ""}>
                 <span className="mb-2.5 block text-xs font-bold uppercase tracking-wider text-blue">
-                  0{i + 1} — {s.title}
+                  0{i + 1} · {s.title}
                 </span>
                 <h2 className="mb-4 text-[28px] font-bold text-deep-blue">{s.title}</h2>
                 <p className="mb-5 text-base text-grey">{s.short}</p>
@@ -122,7 +118,7 @@ export default function ServicesPage() {
               Why your business needs a digital strategy, not just a presence.
             </h2>
             <p className="mb-5 text-[16px] text-grey">
-              Most businesses already exist online in some form. The difference between being visible and being chosen is strategy — a website that converts, a social presence that engages, and visuals that stay consistent everywhere your brand appears.
+              Most businesses already exist online in some form. The difference between being visible and being chosen is strategy: a website that converts, a social presence that engages, and visuals that stay consistent everywhere your brand appears.
             </p>
             <ul className="space-y-3.5">
               {whyNeedUs.map((item) => (
@@ -168,11 +164,8 @@ export default function ServicesPage() {
                   {contact.email}
                 </a>
               </ContactMethod>
-              <ContactMethod icon={<IconPin className="h-[19px] w-[19px] text-white" />} label="Based in">
+              <ContactMethod icon={<IconPin className="h-[19px] w-[19px] text-white" />} label="Based in" last>
                 <span className="text-sm text-white/72">{contact.location}</span>
-              </ContactMethod>
-              <ContactMethod icon={<IconSocial className="h-[19px] w-[19px] text-white" />} label="Follow Us" last>
-                <span className="text-sm text-white/72">@real_dtech · @dtech_group · @DTechAgency_</span>
               </ContactMethod>
             </Reveal>
 

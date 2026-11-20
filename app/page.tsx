@@ -31,7 +31,7 @@ export default function HomePage() {
               <SectionTag>Digital Services Agency</SectionTag>
             </div>
             <h1 className="rise-in rise-in-2 mb-5.5 text-[34px] leading-[1.12] font-bold tracking-tight text-deep-blue sm:text-[44px] lg:text-[54px]">
-              Your business deserves more than an online presence — it deserves{" "}
+              Your business deserves more than an online presence. It deserves{" "}
               <span className="text-blue">growth</span>.
             </h1>
             <p className="rise-in rise-in-2 mb-8 max-w-[520px] text-lg text-grey">{siteConfig.description}</p>
@@ -73,20 +73,21 @@ export default function HomePage() {
             <h2 className="mb-4.5 text-[26px] font-bold text-deep-blue sm:text-[34px]">
               A digital partner focused on turning visibility into real business opportunity.
             </h2>
-            <p className="mb-4 text-[16px] text-grey">
-              DTECH Digital Agency works with businesses and brands to strengthen their digital identity, improve their online visibility and turn audiences into potential clients.
-            </p>
             <p className="mb-6 text-[16px] text-grey">
-              We go beyond simply creating digital content. We help businesses build a professional digital presence that communicates credibility, attracts attention and creates real opportunities for growth.
+              DTECH Digital Agency works with businesses and brands to strengthen their digital identity, improve their online visibility and turn audiences into potential clients, one platform, post and visual at a time.
             </p>
             <Button href="/about" variant="outline">More About Us</Button>
           </Reveal>
           <Reveal delay={120} className="rounded-[20px] bg-deep-blue p-11 text-white">
             <h4 className="mb-4.5 text-xl font-bold text-white">Our Approach</h4>
-            {["Credibility — Built", "Visibility — Improved", "Audience — Converted"].map((row, i) => (
-              <div key={row} className={`flex justify-between py-3.5 ${i !== 0 ? "border-t border-white/14" : ""}`}>
-                <span className="text-sm text-white/60">{row.split(" — ")[0]}</span>
-                <span className="text-xl font-bold">{row.split(" — ")[1]}</span>
+            {[
+              { label: "Credibility", value: "Built" },
+              { label: "Visibility", value: "Improved" },
+              { label: "Audience", value: "Converted" },
+            ].map((row, i) => (
+              <div key={row.label} className={`flex justify-between py-3.5 ${i !== 0 ? "border-t border-white/14" : ""}`}>
+                <span className="text-sm text-white/60">{row.label}</span>
+                <span className="text-xl font-bold">{row.value}</span>
               </div>
             ))}
           </Reveal>
