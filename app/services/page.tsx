@@ -3,13 +3,20 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { IconMail, IconPin, IconPlaceholder, IconWhatsApp } from "@/components/icons";
+import { IconMail, IconPin, IconWhatsApp } from "@/components/icons";
+import { DesignGraphic, SocialGraphic, WebsiteGraphic } from "@/components/ServiceGraphics";
 import { contact, services, whatsappLink } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Our Services",
   description:
     "Explore DTECH Digital Agency's services: website development, social media management and creative visual design. Get in touch for a free enquiry.",
+};
+
+const serviceGraphics = {
+  "website-development": WebsiteGraphic,
+  "social-media": SocialGraphic,
+  "visual-design": DesignGraphic,
 };
 
 const processSteps = [
@@ -45,6 +52,7 @@ export default function ServicesPage() {
       {/* SERVICE DETAILS */}
       {services.map((s, i) => {
         const alt = i % 2 === 1;
+        const Graphic = serviceGraphics[s.slug as keyof typeof serviceGraphics];
         return (
           <section
             key={s.slug}
@@ -70,9 +78,9 @@ export default function ServicesPage() {
               </Reveal>
               <Reveal
                 delay={120}
-                className={`flex min-h-[280px] items-center justify-center rounded-[20px] bg-light-blue p-10 transition-transform duration-500 hover:scale-[1.02] ${alt ? "lg:order-1" : ""}`}
+                className={`flex min-h-[280px] items-center justify-center overflow-hidden rounded-[20px] bg-light-blue p-10 transition-transform duration-500 hover:scale-[1.02] ${alt ? "lg:order-1" : ""}`}
               >
-                <IconPlaceholder className="pointer-events-none h-28 w-28 text-blue" />
+                <Graphic className="pointer-events-none h-auto w-full max-w-[360px] select-none" />
               </Reveal>
             </div>
           </section>

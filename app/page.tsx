@@ -2,9 +2,15 @@ import { Button } from "@/components/Button";
 import { HeroVisual } from "@/components/HeroVisual";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
-import { IconPlaceholder } from "@/components/icons";
+import { DesignGraphic, SocialGraphic, WebsiteGraphic } from "@/components/ServiceGraphics";
 import { services, siteConfig, whatsappLink } from "@/lib/site-config";
 import Link from "next/link";
+
+const serviceGraphics = {
+  "website-development": WebsiteGraphic,
+  "social-media": SocialGraphic,
+  "visual-design": DesignGraphic,
+};
 
 const whyChooseUs = [
   { title: "Professional Approach", desc: "Every project is handled with structure and care." },
@@ -99,11 +105,12 @@ export default function HomePage() {
           />
           <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => {
+              const Graphic = serviceGraphics[s.slug as keyof typeof serviceGraphics];
               return (
                 <Reveal key={s.slug} delay={i * 90}>
                   <div className="group h-full rounded-[14px] border border-border bg-white p-9 transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_4px_14px_rgba(10,31,87,0.06)]">
-                    <div className="mb-5.5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-light-blue transition-transform duration-300 group-hover:scale-110">
-                      <IconPlaceholder className="pointer-events-none h-6.5 w-6.5 text-blue" />
+                    <div className="mb-5.5 w-full max-w-[200px] overflow-hidden rounded-[10px] transition-transform duration-300 group-hover:scale-[1.02]">
+                      <Graphic className="pointer-events-none h-auto w-full select-none" />
                     </div>
                     <h3 className="text-h3 mb-2.5 font-bold text-deep-blue">{s.title}</h3>
                     <p className="mb-4.5 text-[15px] text-grey">{s.short}</p>
