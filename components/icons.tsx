@@ -98,6 +98,16 @@ export function IconX({ className }: { className?: string }) {
   );
 }
 
+export function IconPlaceholder({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <circle cx="8.5" cy="9.5" r="1.5" />
+      <path d="m4 17 5-5 4 4 3-3 4 4" />
+    </svg>
+  );
+}
+
 export function IconCheck({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className={className}>

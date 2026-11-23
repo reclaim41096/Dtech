@@ -2,6 +2,7 @@ import { Button } from "@/components/Button";
 import { HeroVisual } from "@/components/HeroVisual";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
+import { IconPlaceholder } from "@/components/icons";
 import { services, siteConfig, whatsappLink } from "@/lib/site-config";
 import Link from "next/link";
 
@@ -101,8 +102,9 @@ export default function HomePage() {
               return (
                 <Reveal key={s.slug} delay={i * 90}>
                   <div className="group h-full rounded-[14px] border border-border bg-white p-9 transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_4px_14px_rgba(10,31,87,0.06)]">
-                    <div className="mb-5.5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-light-blue transition-transform duration-300 group-hover:scale-110" />
-                    {/* icon placeholder */}
+                    <div className="mb-5.5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-light-blue transition-transform duration-300 group-hover:scale-110">
+                      <IconPlaceholder className="pointer-events-none h-6.5 w-6.5 text-blue" />
+                    </div>
                     <h3 className="text-h3 mb-2.5 font-bold text-deep-blue">{s.title}</h3>
                     <p className="mb-4.5 text-[15px] text-grey">{s.short}</p>
                     <Link href={`/services#${s.slug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue">

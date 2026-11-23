@@ -3,7 +3,7 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { IconMail, IconPin, IconWhatsApp } from "@/components/icons";
+import { IconMail, IconPin, IconPlaceholder, IconWhatsApp } from "@/components/icons";
 import { contact, services, whatsappLink } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -70,9 +70,9 @@ export default function ServicesPage() {
               </Reveal>
               <Reveal
                 delay={120}
-                className={`pointer-events-none flex min-h-[280px] items-center justify-center rounded-[20px] bg-light-blue p-10 ${alt ? "lg:order-1" : ""}`}
+                className={`flex min-h-[280px] items-center justify-center rounded-[20px] bg-light-blue p-10 transition-transform duration-500 hover:scale-[1.02] ${alt ? "lg:order-1" : ""}`}
               >
-                {null}
+                <IconPlaceholder className="pointer-events-none h-28 w-28 text-blue" />
               </Reveal>
             </div>
           </section>
