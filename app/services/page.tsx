@@ -3,19 +3,13 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { IconDesign, IconMail, IconPin, IconSocial, IconWebsite, IconWhatsApp } from "@/components/icons";
+import { IconMail, IconPin, IconWhatsApp } from "@/components/icons";
 import { contact, services, whatsappLink } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Our Services",
   description:
     "Explore DTECH Digital Agency's services: website development, social media management and creative visual design. Get in touch for a free enquiry.",
-};
-
-const serviceIcons = {
-  "website-development": IconWebsite,
-  "social-media": IconSocial,
-  "visual-design": IconDesign,
 };
 
 const processSteps = [
@@ -50,7 +44,6 @@ export default function ServicesPage() {
 
       {/* SERVICE DETAILS */}
       {services.map((s, i) => {
-        const Icon = serviceIcons[s.slug as keyof typeof serviceIcons];
         const alt = i % 2 === 1;
         return (
           <section
@@ -61,7 +54,7 @@ export default function ServicesPage() {
             <div className="container-x grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
               <Reveal className={alt ? "lg:order-2" : ""}>
                 <span className="mb-2.5 block text-xs font-bold uppercase tracking-wider text-blue">
-                  0{i + 1} · {s.title}
+                  0{i + 1}
                 </span>
                 <h2 className="text-h2 mb-4 font-bold text-deep-blue">{s.title}</h2>
                 <p className="mb-5 text-base text-grey">{s.short}</p>
@@ -77,9 +70,9 @@ export default function ServicesPage() {
               </Reveal>
               <Reveal
                 delay={120}
-                className={`flex min-h-[280px] items-center justify-center rounded-[20px] bg-light-blue p-10 transition-transform duration-500 hover:scale-[1.02] ${alt ? "lg:order-1" : ""}`}
+                className={`pointer-events-none flex min-h-[280px] items-center justify-center rounded-[20px] bg-light-blue p-10 ${alt ? "lg:order-1" : ""}`}
               >
-                <Icon className="h-28 w-28 text-blue" />
+                {null}
               </Reveal>
             </div>
           </section>

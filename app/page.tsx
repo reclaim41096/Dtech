@@ -2,7 +2,6 @@ import { Button } from "@/components/Button";
 import { HeroVisual } from "@/components/HeroVisual";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead, SectionTag } from "@/components/Section";
-import { IconDesign, IconSocial, IconWebsite } from "@/components/icons";
 import { services, siteConfig, whatsappLink } from "@/lib/site-config";
 import Link from "next/link";
 
@@ -13,12 +12,6 @@ const whyChooseUs = [
   { title: "Commitment to Quality", desc: "Nothing leaves our hands unless it meets our standard." },
   { title: "Growth Understanding", desc: "We know what digital growth actually requires." },
 ];
-
-const serviceIcons = {
-  "website-development": IconWebsite,
-  "social-media": IconSocial,
-  "visual-design": IconDesign,
-};
 
 export default function HomePage() {
   return (
@@ -105,13 +98,11 @@ export default function HomePage() {
           />
           <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => {
-              const Icon = serviceIcons[s.slug as keyof typeof serviceIcons];
               return (
                 <Reveal key={s.slug} delay={i * 90}>
                   <div className="group h-full rounded-[14px] border border-border bg-white p-9 transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_4px_14px_rgba(10,31,87,0.06)]">
-                    <div className="mb-5.5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-light-blue transition-transform duration-300 group-hover:scale-110">
-                      <Icon className="h-6.5 w-6.5 text-blue" />
-                    </div>
+                    <div className="mb-5.5 flex h-14 w-14 items-center justify-center rounded-[14px] bg-light-blue transition-transform duration-300 group-hover:scale-110" />
+                    {/* icon placeholder */}
                     <h3 className="text-h3 mb-2.5 font-bold text-deep-blue">{s.title}</h3>
                     <p className="mb-4.5 text-[15px] text-grey">{s.short}</p>
                     <Link href={`/services#${s.slug}`} className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue">
